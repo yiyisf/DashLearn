@@ -6,7 +6,7 @@ from dash.dependencies import Input, Output
 app = dash.Dash()
 
 app.layout = html.Div([
-    dcc.Input(id='input', value='请输入些啥吧!', type='text'),
+    dcc.Input(id='input', value='请输入些啥吧!', type='text', placeholder='请输入吧'),
     html.Div(id='output')
     ])
 
@@ -14,7 +14,6 @@ app.layout = html.Div([
     Output(component_id='output', component_property='children'),
     [Input(component_id='input', component_property='value')]
     )
-
 def update_value(input_data):
     return 'Input: "{}"'.format(input_data)
 
